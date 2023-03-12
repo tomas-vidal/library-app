@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <title>Library APP</title>
+  </head>
+  <body>
+    <header class="app__header">
+      <img class="app__image" src="./images/bookshelf.svg" alt="library-logo" />
+      <h1 class="app__title">LIBRARY</h1>
+    </header>
+    <div class="app__sidebar">
+      <form class="app__form">
+        <fieldset>
+          <legend>ADD A BOOK</legend>
+          <ul class="app__form-list">
+            <li class="app__form-item">
+              <label for="name">TITLE</label>
+              <input type="text" name="bookName" id="name" />
+            </li>
+            <li class="app__form-item">
+              <label for="author">AUTHOR</label>
+              <input type="text" name="bookAuthor" id="author" />
+            </li>
+            <li class="app__form-item">
+              <label for="pages">TOTAL PAGES</label>
+              <input type="text" name="totalPages" id="pages" />
+            </li>
+            <li class="app__form-item">
+              <label for="read">READ</label>
+              <input type="checkbox" name="bookRead" id="read" />
+              <!-- FIX CHECKBOX STYLE -->
+              <!-- FIX CHECKBOX STYLE -->
+              <!-- FIX CHECKBOX STYLE -->
+              <!-- FIX CHECKBOX STYLE -->
+            </li>
+          </ul>
+          <button type="submit">ADD BOOK</button>
+        </fieldset>
+      </form>
+      <section class="app__books-info">
+        <ul class="app__list-books">
+          <li class="app__book-total">
+            <h3>TOTAL BOOKS</h3>
+            <p>0</p>
+          </li>
+          <li class="app__book-total">
+            <h3>TOTAL PAGES</h3>
+            <p>0</p>
+          </li>
+          <li class="app__book-total">
+            <h3>BOOKS READ</h3>
+            <p>0</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
