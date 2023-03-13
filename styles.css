@@ -6,6 +6,10 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+body {
+  background-color: #f0f0f0;
+}
+
 /* HEADER */
 
 .app__header {
@@ -32,8 +36,7 @@
 
 .app__sidebar {
   position: sticky;
-  top: 20px;
-  max-height: 80vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   width: 370px;
@@ -150,16 +153,15 @@
   text-align: center;
   list-style-type: none;
   display: flex;
+  justify-content: center;
+  min-height: 270px;
   flex-direction: column;
   gap: 20px;
   color: #fff;
 }
 
 .app__books-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
+  padding: 20px;
 }
 
 .app__book-total h3 {
@@ -177,14 +179,14 @@
 /* BOOKS */
 
 .app__body {
-  padding: 15px;
+  padding: 15px 15px 0 15px;
   display: grid;
   grid-template-columns: 385px auto;
 }
 
 .app__books {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
   gap: 10px;
   grid-auto-rows: minmax(400px, 400px);
 }
@@ -196,9 +198,16 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
+  background-color: #fff;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .app__book img {
   width: 30px;
   cursor: pointer;
+}
+
+.app__options-book {
+  display: flex;
+  gap: 10px;
 }
