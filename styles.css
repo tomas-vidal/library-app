@@ -31,13 +31,14 @@
 /* SIDEBAR */
 
 .app__sidebar {
-  min-height: 80vh;
+  position: sticky;
+  top: 20px;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
   width: 370px;
   background: linear-gradient(120.89deg, #512da8 -42.01%, #673ab7 84.23%);
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
-  margin: 15px;
 }
 
 .app__form-list {
@@ -171,4 +172,33 @@
   margin-top: -10px;
   font-weight: 700;
   font-size: 2rem;
+}
+
+/* BOOKS */
+
+.app__body {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 385px auto;
+}
+
+.app__books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  grid-auto-rows: minmax(400px, 400px);
+}
+
+.app__book {
+  border: 2px solid #6036b3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.app__book img {
+  width: 30px;
+  cursor: pointer;
 }
