@@ -34,9 +34,9 @@ submitButton.addEventListener("click", (e) => {
       id: editingId,
       read: read.checked,
     };
+    editMode = false;
     resetInputs();
     displayBooks(myBooks);
-    editMode = false;
     submitButton.textContent = "ADD BOOK";
     return;
   }
@@ -60,6 +60,12 @@ const displayBooks = (bookArray) => {
           <h2>${book.title}</h2>
           <p>${book.author}</p>
           <span>${book.totalPages}</span>
+          <label class="switch">
+            <input type="checkbox" onclick="setRead(${book.id})" ${
+      book.read ? "checked" : ""
+    } ${editMode ? "disabled" : ""}>
+            <span class="slider round"></span>
+          </label>
           <span>${book.read ? "Read" : "Not read"}</span>
           <div class="app__options-book">
             <img
@@ -87,14 +93,17 @@ const deleteBook = (id) => {
 };
 
 const editBook = (id) => {
+  editMode = true;
   submitButton.textContent = "EDIT CONFIRM";
   editingId = id;
   currentIndex = myBooks.findIndex((book) => book.id === id);
-  editMode = true;
   title.value = myBooks[currentIndex].title;
   author.value = myBooks[currentIndex].author;
   totalPages.value = myBooks[currentIndex].totalPages;
   read.checked = myBooks[currentIndex].read;
+
+  // RESETS THE STYLE OF SELECTED
+  displayBooks(myBooks);
 
   document.querySelector(`[data-id="${editingId}"]`).style.backgroundColor =
     "#6036b3";
@@ -109,4 +118,10 @@ const resetInputs = () => {
   author.value = "";
   totalPages.value = "";
   read.checked = false;
+};
+
+const setRead = (id) => {
+  currentIndex = myBooks.findIndex((book) => book.id === id);
+  myBooks[currentIndex].read = !myBooks[currentIndex].read;
+  displayBooks(myBooks);
 };

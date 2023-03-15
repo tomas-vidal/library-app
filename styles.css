@@ -17,8 +17,9 @@ body {
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
   color: #fff;
   display: flex;
-  padding-left: 43px;
+  padding: 43px;
   height: 150px;
+  width: 100%;
   align-items: center;
 }
 
@@ -28,7 +29,7 @@ body {
 }
 
 .app__title {
-  font-size: 4.3rem;
+  font-size: 4rem;
   margin-left: 13px;
 }
 
@@ -36,7 +37,8 @@ body {
 
 .app__sidebar {
   position: sticky;
-  min-height: 80vh;
+  height: 760px;
+  top: 20px;
   display: flex;
   flex-direction: column;
   width: 370px;
@@ -154,7 +156,7 @@ body {
   list-style-type: none;
   display: flex;
   justify-content: center;
-  min-height: 270px;
+  min-height: 250px;
   flex-direction: column;
   gap: 20px;
   color: #fff;
@@ -210,4 +212,62 @@ body {
 .app__options-book {
   display: flex;
   gap: 10px;
+}
+
+/* TOGGLE SWITCH BUTTON READ PROPERTY */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  height: 28px;
+  width: 54px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+}
+
+input:checked + .slider {
+  background-color: #6036b3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #6036b3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
